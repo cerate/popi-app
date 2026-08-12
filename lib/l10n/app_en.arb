@@ -1,0 +1,15 @@
+{
+  "@@locale": "en",
+  "appTitle": "Flutter Starter",
+  "home": "Home",
+  "settings": "Settings",
+  "chat": "Chat",
+  "welcome": "Your new project starts here.",
+  "theme": "Theme",
+  "system": "System",
+  "light": "Light",
+  "dark": "Dark",
+  "language": "Language",
+  "chinese": "Chinese",
+  "english": "English"
+}

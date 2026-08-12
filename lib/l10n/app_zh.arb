@@ -1,0 +1,15 @@
+{
+  "@@locale": "zh",
+  "appTitle": "Flutter 模板",
+  "home": "首页",
+  "settings": "设置",
+  "chat": "聊天",
+  "welcome": "你的新项目从这里开始。",
+  "theme": "主题",
+  "system": "跟随系统",
+  "light": "浅色",
+  "dark": "深色",
+  "language": "语言",
+  "chinese": "中文",
+  "english": "英文"
+}

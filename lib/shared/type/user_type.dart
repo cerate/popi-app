@@ -1,0 +1,4 @@
+enum UserStatus {
+  guest,
+  authenticated,
+}
