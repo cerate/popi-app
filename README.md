@@ -15,6 +15,8 @@
 - Markdown 消息渲染
 - flutter_chat_ui Agent 聊天界面
 - SVG 图标组件与本地资源目录
+- Bottom Sheet 示例
+- Toast 提示封装
 
 ## 使用
 
@@ -74,6 +76,37 @@ MarkdownMessage(data: message.content)
 
 后端通过 SSE 或 WebSocket 增量返回内容时，只需要更新消息状态并重新构建
 `MarkdownMessage`，不需要修改渲染组件。
+
+## Bottom Sheet
+
+Sheet 示例页面位于 `lib/features/sheet/presentation/sheet_demo_page.dart`，支持：
+
+- 普通 `showModalBottomSheet`
+- 可拖拽的 `DraggableScrollableSheet`
+
+访问路由 `/sheet-demo`，首页也提供了入口。
+
+Sheet 统一通过 `lib/shared/widgets/app_sheet.dart` 调用：
+
+```dart
+AppSheet.show(context: context, builder: (_) => const YourContent());
+AppSheet.showDraggable(
+  context: context,
+  builder: (_, controller) => ListView(controller: controller),
+);
+```
+
+## Toast
+
+项目使用 `toastification`，业务页面通过 `AppToast` 调用：
+
+```dart
+AppToast.success(context, '操作成功');
+AppToast.error(context, '操作失败');
+AppToast.info(context, '提示信息');
+```
+
+封装位置：`lib/shared/widgets/app_toast.dart`。
 
 ## SVG 图标
 

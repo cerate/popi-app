@@ -21,6 +21,24 @@ class AppLocalizationsZh extends AppLocalizations {
   String get chat => '聊天';
 
   @override
+  String get sheetDemo => 'Sheet 示例';
+
+  @override
+  String get modalSheet => '普通底部 Sheet';
+
+  @override
+  String get draggableSheet => '可拖拽 Sheet';
+
+  @override
+  String get copyAction => '复制';
+
+  @override
+  String get shareAction => '分享';
+
+  @override
+  String get item => '项目';
+
+  @override
   String get welcome => '你的新项目从这里开始。';
 
   @override

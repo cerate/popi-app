@@ -14,6 +14,7 @@
 - flutter_chat_ui 聊天界面
 - flutter_markdown_plus Agent 消息渲染
 - flutter_svg SVG 图标渲染
+- toastification Toast 提示
 
 ## 目录约定
 
@@ -109,6 +110,8 @@ flutter gen-l10n
 - 不在 UI 层保存 Token 或处理 JSON 解析。
 - 不把网络请求、持久化和业务规则写进 Widget。
 - SVG 图标统一通过 `AppSvgIcon` 加载，不要在页面中散落资源路径。
+- Toast 统一通过 `AppToast` 调用，不要在业务页面直接使用第三方 Toast API。
+- Bottom Sheet 统一通过 `AppSheet` 调用，不要在业务页面直接调用 Flutter Sheet API。
 - 本地 SVG 放在 `assets/icons/`，资源目录在 `pubspec.yaml` 中统一声明。
 - 新增公共类和复杂逻辑时添加简短注释，避免无意义注释。
 - 保持空安全，不使用没有必要的 `dynamic`。

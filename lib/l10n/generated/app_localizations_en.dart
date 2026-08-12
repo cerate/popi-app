@@ -21,6 +21,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chat => 'Chat';
 
   @override
+  String get sheetDemo => 'Sheet Demo';
+
+  @override
+  String get modalSheet => 'Modal Bottom Sheet';
+
+  @override
+  String get draggableSheet => 'Draggable Sheet';
+
+  @override
+  String get copyAction => 'Copy';
+
+  @override
+  String get shareAction => 'Share';
+
+  @override
+  String get item => 'Item';
+
+  @override
   String get welcome => 'Your new project starts here.';
 
   @override

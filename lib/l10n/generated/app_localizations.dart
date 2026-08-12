@@ -122,6 +122,42 @@ abstract class AppLocalizations {
   /// **'Chat'**
   String get chat;
 
+  /// No description provided for @sheetDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Sheet Demo'**
+  String get sheetDemo;
+
+  /// No description provided for @modalSheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Modal Bottom Sheet'**
+  String get modalSheet;
+
+  /// No description provided for @draggableSheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Draggable Sheet'**
+  String get draggableSheet;
+
+  /// No description provided for @copyAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get copyAction;
+
+  /// No description provided for @shareAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get shareAction;
+
+  /// No description provided for @item.
+  ///
+  /// In en, this message translates to:
+  /// **'Item'**
+  String get item;
+
   /// No description provided for @welcome.
   ///
   /// In en, this message translates to:

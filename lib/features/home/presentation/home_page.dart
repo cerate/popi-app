@@ -15,6 +15,11 @@ class HomePage extends StatelessWidget {
         title: Text(l10n.appTitle),
         actions: [
           IconButton(
+            tooltip: l10n.sheetDemo,
+            icon: const Icon(Icons.vertical_align_bottom),
+            onPressed: () => context.push('/sheet-demo'),
+          ),
+          IconButton(
             tooltip: l10n.chat,
             icon: const Icon(Icons.chat_bubble_outline),
             onPressed: () => context.push('/chat'),
