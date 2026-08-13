@@ -4,7 +4,7 @@
 
 - `verify`：Push 和 Pull Request 都会执行格式检查、`flutter analyze` 和 `flutter test`。
 - `build-android`：读取 Android 签名 Secrets，构建 signed release APK 并上传为 Artifact。
-- `build-ios`：使用 GitHub 的 macOS runner 读取签名 Secrets，构建 iPhone/iPad 的签名 IPA，并上传为 Artifact。
+- `build-ios`：使用 GitHub 的 macOS runner 读取签名 Secrets，按 App Store Connect 发布方式构建 iPhone/iPad 的签名 IPA，并上传为 Artifact。
 
 ## 手动打包
 
@@ -42,4 +42,4 @@ base64 -i distribution.p12 | pbcopy
 base64 -i Runner.mobileprovision | pbcopy
 ```
 
-如果用于 TestFlight，请将 workflow 中 ExportOptions 的 `method` 从 `ad-hoc` 改为 `app-store`，并另行增加 App Store Connect 上传步骤。不要把证书、Profile、密码提交到仓库。
+当前 iOS Workflow 使用 `app-store` 导出方式，适用于上传 TestFlight/App Store。它暂时只上传 IPA Artifact，不会自动提交 App Store Connect；后续可增加 App Store Connect API Key 后再启用自动上传。不要把证书、Profile、密码提交到仓库。
