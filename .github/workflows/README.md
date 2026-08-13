@@ -3,8 +3,8 @@
 `flutter.yml` 提供三类任务：
 
 - `verify`：Push 和 Pull Request 都会执行格式检查、`flutter analyze` 和 `flutter test`。
-- `build-android`：读取 Android 签名 Secrets，构建 signed release APK 并上传为 Artifact。
-- `build-ios`：使用 GitHub 的 macOS runner 读取签名 Secrets，按 App Store Connect 发布方式构建 iPhone/iPad 的签名 IPA，并上传为 Artifact。
+- `build-android`：仅在推送 `v` 开头的 Tag（例如 `v1.0.0`）时读取 Android 签名 Secrets，构建 signed release APK 并上传为 Artifact。
+- `build-ios`：仅在推送 `v` 开头的 Tag（例如 `v1.0.0`）时使用 GitHub 的 macOS runner 读取签名 Secrets，按 App Store Connect 发布方式构建 iPhone/iPad 的签名 IPA，自动上传到 TestFlight，并保留 IPA Artifact。
 
 ## 手动打包
 
@@ -33,6 +33,12 @@ iOS Job 构建的是签名 IPA，目标平台是 iPhone/iPad，不是 macOS。�
 - `IOS_TEAM_ID`：Apple Developer Team ID
 - `IOS_BUNDLE_ID`：Apple Developer 中注册的 App Bundle ID
 
+TestFlight 自动上传还需要在同一页面配置 App Store Connect API Secrets：
+
+- `APPSTORE_ISSUER_ID`：App Store Connect API 的 Issuer ID
+- `APPSTORE_KEY_ID`：App Store Connect API Key ID
+- `APPSTORE_PRIVATE_KEY`：下载的 `.p8` 私钥完整内容，包含 `BEGIN PRIVATE KEY` 和 `END PRIVATE KEY`
+
 CI 会将 `IOS_BUNDLE_ID` 替换工程中的默认 `com.example.flutterStarter` 占位值。
 
 示例转换命令：
@@ -42,4 +48,4 @@ base64 -i distribution.p12 | pbcopy
 base64 -i Runner.mobileprovision | pbcopy
 ```
 
-当前 iOS Workflow 使用 `app-store` 导出方式，适用于上传 TestFlight/App Store。它暂时只上传 IPA Artifact，不会自动提交 App Store Connect；后续可增加 App Store Connect API Key 后再启用自动上传。不要把证书、Profile、密码提交到仓库。
+当前 iOS Workflow 使用 `app-store` 导出方式，生成 IPA 后自动上传到 TestFlight，同时上传 GitHub Artifact 作为备份。不要把证书、Profile、密码或 API 私钥提交到仓库。
