@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_starter/features/sheet/presentation/sheet_demo_page.dart';
-import 'package:flutter_starter/l10n/generated/app_localizations.dart';
+import 'package:popi_ai_app/features/sheet/presentation/sheet_demo_page.dart';
+import 'package:popi_ai_app/l10n/generated/app_localizations.dart';
 
 void main() {
   testWidgets('renders sheet demo actions', (tester) async {

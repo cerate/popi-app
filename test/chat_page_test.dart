@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_starter/features/chat/presentation/chat_page.dart';
+import 'package:popi_ai_app/features/chat/presentation/chat_page.dart';
 
 void main() {
   testWidgets('renders the agent chat page', (tester) async {

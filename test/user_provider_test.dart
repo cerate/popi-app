@@ -2,10 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter_starter/core/storage/secure_storage.dart';
-import 'package:flutter_starter/shared/providers/storage_provider.dart';
-import 'package:flutter_starter/features/auth/domain/user.dart';
-import 'package:flutter_starter/shared/providers/user_provider.dart';
+import 'package:popi_ai_app/core/storage/secure_storage.dart';
+import 'package:popi_ai_app/shared/providers/storage_provider.dart';
+import 'package:popi_ai_app/features/auth/domain/user.dart';
+import 'package:popi_ai_app/shared/providers/user_provider.dart';
 
 void main() {
   const user = User(id: '1', name: '张三', email: 'test@example.com');

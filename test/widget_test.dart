@@ -2,8 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter_starter/app/app.dart';
-import 'package:flutter_starter/shared/providers/storage_provider.dart';
+import 'package:popi_ai_app/app/app.dart';
+import 'package:popi_ai_app/shared/providers/storage_provider.dart';
 
 void main() {
   testWidgets('renders the starter app', (tester) async {
