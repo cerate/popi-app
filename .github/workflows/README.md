@@ -1,5 +1,24 @@
 # GitHub Actions
 
+## 提交前校验
+
+项目使用 Lefthook 管理 Git 提交钩子。首次配置前，请安装 Lefthook 并在项目根目录执行：
+
+```bash
+brew install lefthook
+lefthook install
+```
+
+之后每次提交前会自动执行：
+
+```text
+dart format --output=none --set-exit-if-changed lib test
+flutter analyze
+flutter test
+```
+
+任一步骤失败，提交会被阻止。格式检查失败时先执行 `dart format lib test`，再重新提交。
+
 `flutter.yml` 提供三类任务：
 
 - `verify`：Push 和 Pull Request 都会执行格式检查、`flutter analyze` 和 `flutter test`。
