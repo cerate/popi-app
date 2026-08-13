@@ -8,7 +8,8 @@ import 'network_provider.dart';
 import 'storage_provider.dart';
 import '../type/user_type.dart';
 
-final userProvider = NotifierProvider<UserController, User?>(UserController.new);
+final userProvider =
+    NotifierProvider<UserController, User?>(UserController.new);
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
   return AuthRepository(
@@ -18,7 +19,9 @@ final authRepositoryProvider = Provider<AuthRepository>((ref) {
 });
 
 final userStatusProvider = Provider<UserStatus>((ref) {
-  return ref.watch(userProvider) == null ? UserStatus.guest : UserStatus.authenticated;
+  return ref.watch(userProvider) == null
+      ? UserStatus.guest
+      : UserStatus.authenticated;
 });
 
 class UserController extends Notifier<User?> {
@@ -31,11 +34,14 @@ class UserController extends Notifier<User?> {
   }
 
   Future<void> signIn({required String email, required String password}) async {
-    final user = await ref.read(authRepositoryProvider).login(email: email, password: password);
+    final user = await ref
+        .read(authRepositoryProvider)
+        .login(email: email, password: password);
     await setUser(user);
   }
 
-  Future<void> updateUser({String? name, String? email, String? avatarUrl}) async {
+  Future<void> updateUser(
+      {String? name, String? email, String? avatarUrl}) async {
     final currentUser = state;
     if (currentUser == null) return;
     await setUser(

@@ -8,7 +8,8 @@ class AuthApi {
 
   final Dio dio;
 
-  Future<AuthSession> login({required String email, required String password}) async {
+  Future<AuthSession> login(
+      {required String email, required String password}) async {
     final response = await dio.post<Map<String, dynamic>>(
       '/auth/login',
       data: {'email': email, 'password': password},

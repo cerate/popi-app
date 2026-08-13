@@ -13,7 +13,8 @@ class AppTheme {
       colorScheme: colorScheme,
       brightness: brightness,
       useMaterial3: true,
-      inputDecorationTheme: const InputDecorationTheme(border: OutlineInputBorder()),
+      inputDecorationTheme:
+          const InputDecorationTheme(border: OutlineInputBorder()),
       appBarTheme: const AppBarTheme(centerTitle: false),
     );
   }

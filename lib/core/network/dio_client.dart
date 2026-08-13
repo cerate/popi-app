@@ -8,8 +8,7 @@ class DioClient {
     required TokenStorage secureStorage,
     String baseUrl = 'https://api.example.com',
     bool enableLogging = false,
-  })
-      : dio = Dio(
+  }) : dio = Dio(
           BaseOptions(
             baseUrl: baseUrl,
             connectTimeout: const Duration(seconds: 15),
@@ -19,7 +18,8 @@ class DioClient {
         ) {
     dio.interceptors.add(AuthInterceptor(secureStorage));
     if (enableLogging) {
-      dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
+      dio.interceptors
+          .add(LogInterceptor(requestBody: true, responseBody: true));
     }
   }
 

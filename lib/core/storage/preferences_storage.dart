@@ -7,7 +7,8 @@ class PreferencesStorage {
 
   String? getString(String key) => preferences.getString(key);
 
-  Future<void> setString(String key, String value) => preferences.setString(key, value);
+  Future<void> setString(String key, String value) =>
+      preferences.setString(key, value);
 
   Future<void> remove(String key) => preferences.remove(key);
 }

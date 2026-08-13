@@ -12,8 +12,11 @@ final routerProvider = Provider<GoRouter>((ref) {
     routes: [
       GoRoute(path: '/', builder: (context, state) => const HomePage()),
       GoRoute(path: '/chat', builder: (context, state) => const ChatPage()),
-      GoRoute(path: '/settings', builder: (context, state) => const SettingsPage()),
-      GoRoute(path: '/sheet-demo', builder: (context, state) => const SheetDemoPage()),
+      GoRoute(
+          path: '/settings', builder: (context, state) => const SettingsPage()),
+      GoRoute(
+          path: '/sheet-demo',
+          builder: (context, state) => const SheetDemoPage()),
     ],
   );
 });

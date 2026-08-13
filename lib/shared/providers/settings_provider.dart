@@ -3,7 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'storage_provider.dart';
 
-final themeModeProvider = NotifierProvider<ThemeModeController, ThemeMode>(ThemeModeController.new);
+final themeModeProvider =
+    NotifierProvider<ThemeModeController, ThemeMode>(ThemeModeController.new);
 
 class ThemeModeController extends Notifier<ThemeMode> {
   static const _key = 'theme_mode';
@@ -23,16 +24,20 @@ class ThemeModeController extends Notifier<ThemeMode> {
   }
 }
 
-final localeProvider = NotifierProvider<LocaleController, Locale>(LocaleController.new);
+final localeProvider =
+    NotifierProvider<LocaleController, Locale>(LocaleController.new);
 
 class LocaleController extends Notifier<Locale> {
   static const _key = 'locale';
 
   @override
-  Locale build() => Locale(ref.read(preferencesStorageProvider).getString(_key) ?? 'zh');
+  Locale build() =>
+      Locale(ref.read(preferencesStorageProvider).getString(_key) ?? 'zh');
 
   Future<void> setLocale(Locale locale) async {
     state = locale;
-    await ref.read(preferencesStorageProvider).setString(_key, locale.languageCode);
+    await ref
+        .read(preferencesStorageProvider)
+        .setString(_key, locale.languageCode);
   }
 }
